@@ -5,6 +5,7 @@ import { ShoppingBasket } from "lucide-react";
 import { ShieldCheck } from "lucide-react";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const Card = () => {
  return (
@@ -36,28 +37,28 @@ const Card = () => {
       image="https://i.ibb.co/z7HBQDM/image-01.jpg"
       CardTitle="MARKA YENİLEME "
       CardSubtitle="NORMAL"
-      titleHref="#"
+      titleHref="/services/website-builder"
       CardDescription="Marka Yenileme (NORMAL) işlemi yapılacak markanın 10 Yıllık koruma süresinin dolmamış gerekmektedir."
      />
      <SingleCard
       image="https://i.ibb.co/zf4Xq4V/image-02.jpg"
       CardTitle="MARKA YENİLEME "
       CardSubtitle="CEZALI"
-      titleHref="#"
+      titleHref="/services/website-builder2"
       CardDescription="Marka Yenileme (CEZALI) işlemi yapılacak markanın 10 Yıllık koruma süresinin dolmuş olup üzerinden 6 ay geçmemesi gerekmektedir"
      />
      <SingleCard
       image="https://i.ibb.co/z7HBQDM/image-01.jpg"
       CardTitle="MARKA İZLEME"
       CardSubtitle="İZLEME"
-      titleHref="#"
+      titleHref="/services/website-builder3"
       CardDescription="Markanızın taklidi her an ortaya çıkabilir. Koruma altına alınan markanızın mutlaka takip edilmesi de gerekiyor."
      />
      <SingleCard
       image="https://i.ibb.co/z7HBQDM/image-01.jpg"
       CardTitle="MARKA DEVİR"
       CardSubtitle="DEVİR"
-      titleHref="#"
+      titleHref="/services/website-builder4"
       CardDescription="Markanın tescil edildiği mal veya hizmetlerin tamamının veya bir kısmının başka bir şahıs ya da firmaya devredilmesidir."
      />
      <SingleCard image="https://i.ibb.co/z7HBQDM/image-01.jpg" CardTitle="MARKA YAYINA İTİRAZ" CardSubtitle="İTİRAZ" titleHref="#" CardDescription="Marka tescil belgesinin verilmesine karşı kurum nezdinde itirazda bulunabilirler." />
@@ -66,15 +67,17 @@ const Card = () => {
       image="https://i.ibb.co/z7HBQDM/image-01.jpg"
       CardTitle="MARKA TESCIL BELGESI DUZENLEME"
       CardSubtitle="DUZENLEME"
-      titleHref="#"
+      titleHref="/services/website-builder5"
       CardDescription="Marka tescilinden sonra belge ücreti, başvurudan itibaren iki ay içinde ödenip kuruma teslim edilmelidir."
      />
     </div>
 
-    <Button>
-     Tüm Hizmetlerimiz
-     <ChevronRight size={20} />
-    </Button>
+    <Link href="./services">
+     <Button>
+      Tüm Hizmetlerimiz
+      <ChevronRight size={20} />
+     </Button>
+    </Link>
    </div>
   </section>
  );
@@ -90,9 +93,9 @@ const SingleCard = ({ image, CardDescription, CardTitle, CardSubtitle, titleHref
     <div className="mr-4 w-full">
      <span className="text-primary mb-3 block text-xs font-semibold">{CardSubtitle}</span>
      <h3>
-      <a href={titleHref} className="text-dark hover:text-primary mb-4 block text-sm font-semibold">
+      <Link href={titleHref} className="text-dark hover:text-primary mb-4 block text-sm font-semibold">
        {CardTitle}
-      </a>
+      </Link>
      </h3>
      <p className="text-body-color text-xs">{CardDescription}</p>
     </div>

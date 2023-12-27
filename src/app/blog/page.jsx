@@ -3,7 +3,7 @@ import React from "react";
 import SvgComponent from "../../assets/images/SvgComponent";
 import Link from "next/link";
 
-const services = () => {
+const Blog = () => {
  return (
   <>
    <section className="relative py-10 overflow-hidden bg-black sm:py-16 lg:py-24 xl:py-32">
@@ -17,7 +17,7 @@ const services = () => {
 
     <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
      <div className="text-center md:w-2/3 lg:w-1/2 xl:w-1/3 md:text-left">
-      <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">Hizmetlerimiz</h2>
+      <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">Blog</h2>
      </div>
     </div>
    </section>
@@ -29,7 +29,7 @@ const services = () => {
        image="https://i.ibb.co/MVv7h59/image-01.jpg"
        CardTitle="MARKA YENİLEME (NORMAL)"
        titleHref="#"
-       btnHref="/services/website-builder"
+       btnHref="/blog/website-builder9s"
        CardDescription="Marka Yenileme (NORMAL) işlemi yapılacak markanın 10 Yıllık koruma süresinin dolmamış gerekmektedir."
        Button="Detaylar"
       />
@@ -37,7 +37,7 @@ const services = () => {
        image="https://i.ibb.co/R7M31z0/image-02.jpg"
        CardTitle="MARKA YENİLEME (CEZALI)"
        titleHref="#"
-       btnHref="/services/website-builder2"
+       btnHref="/blog/website-builder5"
        CardDescription="Marka Yenileme (CEZALI) işlemi yapılacak markanın 10 Yıllık koruma süresinin dolmuş olup üzerinden 6 ay geçmemesi gerekmektedir."
        Button="Detaylar"
       />
@@ -45,7 +45,7 @@ const services = () => {
        image="https://i.ibb.co/R7SrWtJ/image-03.jpg"
        CardTitle="MARKA İZLEME"
        titleHref="#"
-       btnHref="/services/website-builder3"
+       btnHref="/blog/website-builder6"
        CardDescription="Markanızın taklidi her an ortaya çıkabilir. Koruma altına alınan markanızın mutlaka takip edilmesi de gerekiyor."
        Button="Detaylar"
       />
@@ -53,7 +53,7 @@ const services = () => {
        image="https://i.ibb.co/dkdXLc3/image-04.jpg"
        CardTitle="MARKA DEVİR"
        titleHref="#"
-       btnHref="/services/website-builder4"
+       btnHref="/blog/website-builder7"
        CardDescription="Markanın tescil edildiği mal veya hizmetlerin tamamının veya bir kısmının başka bir şahıs ya da firmaya devredilmesidir."
        Button="Detaylar"
       />
@@ -64,7 +64,7 @@ const services = () => {
  );
 };
 
-export default services;
+export default Blog;
 
 const SingleCard = ({ image, Button, CardDescription, CardTitle, titleHref, btnHref }) => {
  return (

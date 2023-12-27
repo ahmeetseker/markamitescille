@@ -1,31 +1,18 @@
-
-
-
-import Tables from "../components/Tables"
-import Faq from "../components/Faq"
-import HowToWorks from "../components/HowToWorks"
-import Partners from "../components/Partners"
+import Tables from "../components/Tables";
+import Faq from "../components/Faq";
+import HowToWorks from "../components/HowToWorks";
+import Partners from "../components/Partners";
 
 export default function Home() {
-  return (
+ return (
+  <>
+   <Tables />
 
-    <>
-     
-      
-     <Tables/>
+   <HowToWorks />
 
-     <HowToWorks/>
-    
+   <Faq />
 
-    <Faq/>
-
-    <Partners/>
-
-
-
-    </>
-
-      
-        
-  )
+   <Partners />
+  </>
+ );
 }

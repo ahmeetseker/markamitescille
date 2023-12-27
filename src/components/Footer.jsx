@@ -40,61 +40,50 @@ const Footer = () => {
      </div>
 
      <LinkGroup header="Hizmetlerimiz">
-      <NavLink link="/about" label="Marka Yenileme (Normal)" />
-      <NavLink link="/#" label="Marka İzleme" />
-      <NavLink link="/#" label="Marka Tescil Tamamlama" />
-      <NavLink link="/#" label="Marka Yayınına İtiraz" />
+      <NavLink link="/services/website-builder" label="Marka Yenileme (Normal)" />
+      <NavLink link="/services/website-builder3" label="Marka İzleme" />
+      <NavLink link="/services/website-builder4" label="Marka Tescil Tamamlama" />
+      <NavLink link="/services/website-builder2" label="Marka Yayınına İtiraz" />
      </LinkGroup>
      <LinkGroup header="Hemen Tescille">
-      <NavLink link="/#" label="Biz kimiz?" />
-      <NavLink link="/#" label="Hizmetlerimiz" />
-      <NavLink link="/#" label="Referanslar" />
+      <NavLink link="/about" label="Hakkımızda" />
+      <NavLink link="/services" label="Hizmetlerimiz" />
+      <NavLink link="/references" label="Referanslar" />
       <NavLink link="/#" label="Blog" />
-      <NavLink link="/#" label="İletişim" />
+      <NavLink link="/contact" label="İletişim" />
      </LinkGroup>
      <LinkGroup header="Yasal Bilgiler">
-      <NavLink link="/#" label="Hesap Numaraları" />
-      <NavLink link="/#" label="Satış Sözleşmesi" />
-      <NavLink link="/#" label="İade Politikası" />
-      <NavLink link="/#" label="KVKK ve Gizlilik Sözleşmesi" />
-      <NavLink link="/#" label="Sıkça Sorulan Sorular ?" />
+      <NavLink link="/ibanNumber" label="Hesap Numaraları" />
+      <NavLink link="/legal-information" label="Satış Sözleşmesi" />
+      <NavLink link="/legal-information" label="İade Politikası" />
+      <NavLink link="/legal-information" label="KVKK ve Gizlilik Sözleşmesi" />
+      <NavLink link="/question" label="Sıkça Sorulan Sorular ?" />
      </LinkGroup>
 
      <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
       <div className="w-full mb-10">
        <h4 className="mb-9 text-lg font-semibold text-black">Son Bloglar</h4>
-       <a href="/#" className="mb-8 flex items-center text-black  cursor-pointer">
+       <Link href="/blog/website-builder9s" className="mb-8 flex items-center text-black  cursor-pointer">
         <div className="mr-5 w-full max-w-[70px] overflow-hidden rounded">
          <img src="https://cdn.tailgrids.com/2.0/image/application/images/footers/footer-04/blog-01.jpg" alt="image" className="w-full" />
         </div>
         <p className="text-base hover:opacity-20 cursor-pointer">I think really important to design...</p>
-       </a>
-       <a href="/#" className="mb-8 flex items-center text-black  cursor-pointer">
+       </Link>
+       <Link href="/blog/website-builder5" className="mb-8 flex items-center text-black  cursor-pointer">
         <div className="mr-5 w-full max-w-[70px] overflow-hidden rounded">
          <img src="https://cdn.tailgrids.com/2.0/image/application/images/footers/footer-04/blog-02.jpg" alt="image" className="w-full" />
         </div>
         <p className="text-base hover:opacity-20 cursor-pointer">Recognizing the need is the primary...</p>
-       </a>
+       </Link>
       </div>
      </div>
     </div>
    </div>
    <div className="mt-12 border-t border-opacity-40 py-8 lg:mt-[60px]">
     <div className="container mx-auto">
-     <div className="-mx-4 flex flex-wrap">
-      <div className="w-full px-4 md:w-2/3 lg:w-1/2">
-       <div className="my-1">
-        <div className="-mx-3 flex flex-wrap items-center justify-center md:justify-start">
-         <BottomNavLink link="/#" label="Privacy policy" />
-         <BottomNavLink link="/#" label="Legal notice" />
-         <BottomNavLink link="/#" label="Terms of service" />
-        </div>
-       </div>
-      </div>
-      <div className="w-full px-4 md:w-1/3 lg:w-1/2">
-       <div className="my-1 flex justify-center md:justify-end">
-        <p className="text-base text-black">&copy; {new Date().getFullYear()} TailGrids</p>
-       </div>
+     <div className="w-ful">
+      <div className="my-1 flex justify-center ">
+       <p className="text-base text-black">&copy; {new Date().getFullYear()} Orjinfinitiy</p>
       </div>
      </div>
     </div>
@@ -129,10 +118,4 @@ const NavLink = ({ label, link }) => {
  );
 };
 
-const BottomNavLink = ({ label, link }) => {
- return (
-  <Link href={link} className="px-3 text-base text-black hover:opacity-20">
-   {label}
-  </Link>
- );
-};
+

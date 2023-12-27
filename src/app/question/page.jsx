@@ -1,13 +1,15 @@
 "use client";
 
+import CompanyTag from "@/components/CompanyTag";
+
 import React, { useState } from "react";
-import { Button } from "./ui/button";
-import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 
-const FaqSection = () => {
+import SvgComponent from "../../assets/images/SvgComponent";
+
+import { Player, Controls } from "@lottiefiles/react-lottie-player";
+
+const question = () => {
  const [activeIndex, setActiveIndex] = useState(null);
-
  const toggleAccordion = (index) => {
   setActiveIndex(activeIndex === index ? null : index);
  };
@@ -43,39 +45,54 @@ const FaqSection = () => {
  ];
 
  return (
-  <section className="py-10  sm:py-16 lg:py-24">
-   <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-    <div className="max-w-2xl mx-auto text-center">
-     <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Sıkça Sorulan Sorular</h2>
+  <>
+   <section className="relative py-10 overflow-hidden bg-black sm:py-16 lg:py-24 xl:py-32">
+    <div className="absolute inset-0">
+     <SvgComponent />
     </div>
 
-    <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
-     {faqData.map((item, index) => (
-      <div key={index} className={`transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 ${activeIndex === index ? "bg-gray-50" : ""}`}>
-       <button type="button" className="flex items-center justify-between w-full px-4 py-5 sm:p-6" onClick={() => toggleAccordion(index)}>
-        <div className="flex text-start text-lg font-semibold text-black">{item.question}</div>
+    <div className="absolute inset-0 hidden bg-gradient-to-r md:block from-black to-transparent"></div>
 
-        <svg className={`w-6 h-6 text-gray-400 ${activeIndex === index ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-       </button>
+    <div className="absolute inset-0 block bg-black/60 md:hidden"></div>
 
-       <div className={`px-4 pb-5 sm:px-6 sm:pb-6 ${activeIndex === index ? "" : "hidden"}`}>
-        <p>{item.answer}</p>
+    <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+     <div className="text-center md:w-2/3 lg:w-1/2 xl:w-1/3 md:text-left">
+      <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">Sıkça Sorulan Sorular</h2>
+     </div>
+    </div>
+   </section>
+
+   <section>
+    <div className="container mx-auto">
+     <div className="grid lg:grid-cols-3 grid-cols-1 gap-4  mt-8   ">
+      <div className="col-span-2">
+       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+         {faqData.map((item, index) => (
+          <div key={index} className={`transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50 ${activeIndex === index ? "bg-gray-50" : ""}`}>
+           <button type="button" className="flex items-center justify-between w-full px-4 py-5 sm:p-6" onClick={() => toggleAccordion(index)}>
+            <div className="flex text-start text-lg font-semibold text-black">{item.question}</div>
+
+            <svg className={`w-6 h-6 text-gray-400 ${activeIndex === index ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+           </button>
+
+           <div className={`px-4 pb-5 sm:px-6 sm:pb-6 ${activeIndex === index ? "" : "hidden"}`}>
+            <p>{item.answer}</p>
+           </div>
+          </div>
+         ))}
+        </div>
        </div>
       </div>
-     ))}
 
-     <Link href="./question">
-      <Button className="mt-4">
-       Tüm Sorular
-       <ChevronRight size={20} />
-      </Button>
-     </Link>
+      <Player autoplay loop src="https://lottie.host/261b3f4c-4402-4dda-a9bb-430bcb0351ea/bA73f6X05C.json" style={{ height: "700px", width: "500px" }}></Player>
+     </div>
     </div>
-   </div>
-  </section>
+   </section>
+  </>
  );
 };
 
-export default FaqSection;
+export default question;
